@@ -1,0 +1,30 @@
+class SessionsController < ApplicationController
+
+  def new
+  end
+
+  def create
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+      if user.activated?
+        log_in user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        flash[:success] = 'ログインしました。'
+        redirect_back_or user
+      else
+        flash[:danger] = 'アカウントが有効ではありません。メールを確認して登録を完了させてください。'
+        redirect_to root_url
+      end
+    else
+      flash.now[:danger] = 'メールアドレスまたは、パスワードが間違っています。'
+      render 'new'
+    end
+  end
+
+  def destroy
+    log_out if logged_in?
+    flash[:success] = 'ログアウトしました。'
+    redirect_to root_url
+  end
+
+end

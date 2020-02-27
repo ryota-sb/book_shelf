@@ -1,0 +1,3 @@
+$('#comment-area').html("<%= j(render 'index', { comments: @comment.book.comments }) %>");
+$('textarea').val('');
+$('#comment-count').html("<%= @comment.book.comments.count %>件のコメント");

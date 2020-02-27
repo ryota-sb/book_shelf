@@ -1,0 +1,15 @@
+<% provide(:title, 'パスワードをお忘れの方') %>
+
+<div class="password-reset-page">
+  <div class="password-reset-title">
+    <h1>パスワードをお忘れの方へ</h1>
+  </div>
+  <%= form_for :password_reset, url: password_resets_path do |f| %>
+    <div class="input-form">
+      <%= f.text_field :email, placeholder: 'メールアドレス' %>
+    </div>
+    <div class="form-button">
+      <%= f.submit '送信' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<%= javascript_include_tag 'textarea_auto' %>
+
+<div class="comment-form">
+  <%= form_with(model: [book, comment]) do |f| %>
+    <%= f.text_area :content, id: 'textarea', placeholder: 'コメントをしよう！' %>
+    <div class="comment-button">
+      <%= f.submit 'コメント' %>
+    </div>
+  <% end %>
+</div>

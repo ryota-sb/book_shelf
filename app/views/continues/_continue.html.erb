@@ -1,0 +1,6 @@
+<div class="continue_count_button">
+  <%= form_for user.continues.build, remote: true do |f| %>
+    <%= hidden_field_tag :user_id, user.id %>
+    <%= f.submit '継続カウントする' %>
+  <% end %>
+</div>

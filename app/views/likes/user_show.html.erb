@@ -1,0 +1,25 @@
+<div class="like-user-show-page">
+  <div class="like-user-show-title">
+    <% if !current_user_book?(@book) %>
+      <h1>いいねしているユーザー</h1>
+    <% else %>
+      <h1>いいねしてくれたユーザー</h1>
+    <% end %>
+  </div>
+   <div class="like-user-container">
+    <% @likes.each do |like| %>
+      <div class="like-user-show-info">
+        <div class="like-user-name">
+          <%= link_to like.user.name, user_path(like.user) %>
+        </div>
+        <div class="like-user-image">
+          <% if like.user.image? %>
+            <%= link_to image_tag(like.user.image.url, size: '150x150'), user_path(like.user) %>
+          <% else %>
+            <%= link_to image_tag('default_user.jpg', size: '150x150'), user_path(like.user) %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

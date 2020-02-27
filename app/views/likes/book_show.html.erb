@@ -1,0 +1,18 @@
+<div class="like-book-show-page">
+  <div class="like-book-container">
+    <% @likes.each do |like| %>
+      <div class="like-book-show-info">
+        <div class="like-book-title">
+          <%= like.book.title %>
+        </div>
+        <div class="like-book-image">
+          <% if like.book.image? %>
+            <%= link_to image_tag(like.book.image.url, size: '150x190'), book_path(like.book) %>
+          <% else %>
+            <%= link_to image_tag('default_book.jpg', size: '150x190'), book_path(like.book) %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

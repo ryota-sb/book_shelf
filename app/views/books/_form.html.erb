@@ -1,0 +1,25 @@
+<%= form_for @book do |f| %>
+
+  <div class="input-form">
+    <%= f.label :title, 'Tilte' %>
+    <%= f.text_field :title, placeholder: 'タイトル' %>
+  </div>
+
+  <div class="book-image">
+    <%= f.label :image, 'Book image' %>
+    <div class="image-field">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+ 
+
+  <div class="text-form">
+    <%= f.label :content, 'Memo' %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div class="form-button">
+    <%= f.submit '登録' %>
+  </div>
+
+<% end %>

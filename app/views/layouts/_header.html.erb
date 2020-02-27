@@ -1,0 +1,28 @@
+<header>
+  <% if logged_in? %>
+    <div class="search-form">
+      <%= render 'books/search_form' %>
+    </div>
+  <% else %>
+    <div class="title-logo">
+      <h3><span>B</span>ook<span>S</span>helf</h3>
+    </div>
+  <% end %>
+  <% unless logged_in? %>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to root_path, method: :get do %>
+            <i class="fas fa-home"></i>ホーム
+          <% end %>
+        </li>
+        <li><%= link_to '使い方', about_path %></li>
+        <li>
+          <%= link_to login_path, method: :get do %>
+            <i class="fas fa-sign-in-alt"></i>ログイン
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  <% end %>
+</header>

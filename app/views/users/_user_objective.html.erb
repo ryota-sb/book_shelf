@@ -1,0 +1,14 @@
+<div class="user-objective">
+  <% if current_user?(user)%>
+    <% if user.objective == '' %>
+      <p>目標を設定しよう！</p>
+    <% else %>
+      <%= render partial: 'continues/continue_form', locals: { user: user } %>
+      <div id="continue_count">
+        <p>継続日数<%= user.continues.count %>日... <%= user.objective %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <p>目標を設定していません。</p>
+  <% end %>
+</div>

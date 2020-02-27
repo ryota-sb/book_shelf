@@ -1,0 +1,28 @@
+<%= form_for @user do |f| %>
+
+  <div class="input-form">
+    <%= f.text_field :name, placeholder: '名前入力' %>
+    <%= f.text_field :email, placeholder: 'メールアドレス入力' %>
+    <%= f.password_field :password, placeholder: 'パスワード(6文字以上)' %>
+    <%= f.password_field :password_confirmation, placeholder: 'パスワード再入力' %>
+  </div>
+
+  <div class="user-image">
+    <%= f.label :image, 'ユーザー画像' %></br>
+    <div class="image-field">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+
+  <div class="objective">
+    <%= f.label :objective, '目標設定' %>
+    <div class="objective-form">
+      <%= f.text_field :objective %>
+    </div>
+  </div>
+ 
+  <div class="form-button">
+    <%= f.submit yield(:button_text) %>
+  </div>
+
+<% end %>

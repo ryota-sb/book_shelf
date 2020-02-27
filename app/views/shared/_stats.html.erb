@@ -1,0 +1,14 @@
+<div class="relation-button">
+  <div class="follow-button">
+    <%= link_to 'フォロー', following_user_path(@user) %>
+    <strong id="following">
+      <%= @user.following.count %>
+    </strong>
+  </div>
+  <div class="unfollow-button">
+    <%= link_to 'フォロワー', followers_user_path(@user) %>
+    <strong id="followers">
+      <%= @user.followers.count %>
+    </strong>
+  </div>
+</div>

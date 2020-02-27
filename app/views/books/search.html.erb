@@ -1,0 +1,21 @@
+<% provide(:title, "#{params[:search]}") %>
+
+<div class="book-search-page">
+  <h1>検索結果</h1>
+  <div class="book-search-container">
+    <% @books.each do |book| %>
+      <div class="search-book-info">
+        <div class="search-book-title">
+          <%= book.title %>
+        </div>
+        <ul id='search-book'>
+          <% if book.image? %>
+            <%= link_to image_tag(book.image.url, size: '150x190'), book_path(book) %>
+          <% else %>
+            <%= link_to image_tag('default_book.jpg', size: '150x190'), book_path(book) %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>

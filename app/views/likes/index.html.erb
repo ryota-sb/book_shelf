@@ -1,0 +1,8 @@
+<h1>お気に入りにした本</h1>
+
+<% @likes.each do |like| %>
+  <ul>
+    <li>いいねしたユーザー: <%= like.user_id %></li>
+    <li>いいねされた本: <%= like.book_id%></li>
+  </ul>
+<% end %>

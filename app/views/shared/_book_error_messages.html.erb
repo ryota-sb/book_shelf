@@ -1,0 +1,9 @@
+<% if @book.errors.any? %>
+  <div id="error-explanation" class="alert alert-danger">
+    <ul class="error-message-box">
+      <% @book.errors.messages.each do |key, value| %>
+        <li><%= @book.errors.full_messages_for(key).first %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

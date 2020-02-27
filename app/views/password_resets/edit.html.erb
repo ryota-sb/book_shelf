@@ -1,0 +1,19 @@
+<% provide(:title, '新しいパスワード登録') %>
+
+<div class="new-password-page">
+  <div class="new-password-title">
+    <h1>新しいパスワードを入力してください</h1>
+  </div>
+  <%= render 'shared/user_error_messages' %>
+  <%= form_for @user, url: password_reset_path(params[:id]) do |f| %>
+    <div class="input-form">
+      <%= hidden_field_tag :email, @user.email %>
+      <%= f.password_field :password, placeholder: 'パスワード' %>
+      <%= f.password_field :password_confirmation, placeholder: 'パスワード再入力' %>
+    </div>
+    <div class="form-button">
+      <%= f.submit 'パスワードを更新する' %>
+    </div>
+  <% end %>
+</div>
+

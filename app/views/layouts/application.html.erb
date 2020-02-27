@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookShelf</title>
+    <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/side_menu' %>
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/flash_messages' %>
+      <div class="main">
+        <%= yield %>
+      </div>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>

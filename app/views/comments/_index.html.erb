@@ -1,0 +1,28 @@
+<% comments.each do |comment| %>
+  <div class="comment-info">
+    <% unless comment.id.nil? %>
+      <div class="user-info">
+        <% if comment.user.image? %>
+          <%= image_tag comment.user.image.url, size: '50x50' %>
+        <% else %>
+          <%= image_tag 'default_user.jpg', size: '50x50' %>
+        <% end %>
+        <div class="user-name-and-time">
+          <p><%= link_to "#{comment.user.name}さん", user_path(comment.user) %></p>
+          <p><%= time_ago_in_words(comment.created_at) %></p>
+        </div>
+      </div>
+      <div class="user-comment">
+        <pre><%= comment.content %></pre>
+      </div>
+    <% end %>
+
+    <% if comment.user == current_user %>
+      <div class="comment-delete">
+        <%= link_to book_comment_path(comment.book_id, comment.id), method: :delete, remote: true do %>
+          <i class="fas fa-times"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,15 @@
+<%= javascript_include_tag 'toggle_comment_box' %>
+
+<div class="comment-page">
+  <div id="comment-count" class="comment-count">
+    <%= @book.comments.count %>件のコメント<i class="fas fa-chevron-down"></i>
+  </div>
+  <div id="toggle-target">
+    <% if logged_in? && !current_user_book?(@book) %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, book: @book } %>
+    <% end %>
+    <div id="comment-area">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>
+  </div>
+</div>

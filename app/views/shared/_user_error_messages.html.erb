@@ -1,0 +1,9 @@
+<% if @user.errors.any? %>
+  <div id="error-explanation" class="alert alert-danger">
+    <ul class="error-message-box">
+      <% @user.errors.messages.each do |key, value| %>
+        <li><%= @user.errors.full_messages_for(key).first %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

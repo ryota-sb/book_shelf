@@ -1,0 +1,39 @@
+<% provide(:title, 'ユーザー詳細') %>
+
+<%= render partial: 'user_objective', locals: { user: @user } %>
+
+<div class="user-page">
+  <div class="user-info">
+    <div class="user-picture">
+      <% if @user.image? %>
+        <%= image_tag @user.image.url, alt: 'ユーザー画像', size: '200x200' %>
+      <% else%>
+        <%= image_tag 'default_user.jpg', alt: 'デフォルト画像', size: '200x200' %>
+      <% end %>
+    </div>
+    <div class="user-items">
+      <% if current_user?(@user) %>
+        <p><%= link_to @user.name, edit_user_path(current_user) %></p>
+      <% else %>
+        <p><a><%= @user.name %></a></p>
+      <% end %>
+      <%= render 'shared/stats' %>
+      <div class="follow-toggle-button">
+        <%= render 'follow_form' if logged_in? %>
+      </div>
+      <% if current_user?(@user) %>
+        <div class="user-book-button">
+          <%= link_to new_book_path, method: :get do %>
+            <i class="fas fa-book"></i>BOOK 登録
+          <% end %>
+        </div>
+        <div class="user-favorite-button">
+          <%= link_to book_show_like_path(current_user), method: :get do %>
+            <i class="fas fa-heart"></i>お気に入り
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= render 'books/book_show' %>
+</div>

@@ -1,0 +1,39 @@
+<div class="user-book-field">
+  <% @books.each do |book| %>
+    <div class="book-info">
+      <div class="title-bar">
+        <div class="book-title">
+          <%= book.title %>
+        </div>
+        <% if current_user?(book.user) %>
+          <div class="delete-button">
+            <%= link_to book_path(book.id), method: :delete, data: { confirm: '本当に削除しますか？' } do %>
+              <i class="fas fa-times"></i>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="book-image">
+        <% if book.image? %>
+          <%= link_to image_tag(book.image.url, size: '135x180'), book_path(book) %>
+        <% else %>
+          <%= link_to image_tag('default_book.jpg', size: '135x180'), book_path(book) %>
+        <% end %>
+      </div>
+      <div class="button-field">
+        <div class="comment-button">
+          <i class="far fa-comment"></i>
+          <div class="comment-count">
+            <%= book.comments.count %>
+          </div>
+        </div>
+        <div class="favorite-button">
+          <i class="far fa-heart"></i>
+          <div class="favorite-count">
+            <%= link_to book.likes.count, user_show_like_path(book) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

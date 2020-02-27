@@ -1,0 +1,6 @@
+<%= form_tag search_books_path, method: :get do %>
+  <%= text_field_tag :search, '', placeholder: "本を探す" %>
+  <%= button_tag type: 'submit' do %>
+    <i class="fas fa-search"></i>
+  <% end %>
+<% end %>

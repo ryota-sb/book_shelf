@@ -1,0 +1,2 @@
+$('#like-form').html("<%= j(render 'like', locals: { book: @book }) %>");
+$('#likes_count').html("<%= @book.likes.count %>");

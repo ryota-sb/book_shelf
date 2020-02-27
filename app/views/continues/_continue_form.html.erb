@@ -1,0 +1,6 @@
+<div id="continue-form">
+  <% if current_user?(user) %>
+    <%= render partial: 'continues/continue', locals: { user: user } %>
+    <%= link_to '削除', continue_url(user.continues), method: :delete %>
+  <% end %>
+</div>

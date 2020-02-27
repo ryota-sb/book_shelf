@@ -1,0 +1,2 @@
+$('#continue-form').html("<%= j(render 'continue', locals: { user: user }) %>");
+$('#continue_count').html("<%= @user.continues.count %>");
