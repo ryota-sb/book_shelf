@@ -1,1 +1,1 @@
-Book Shelf (本管理アプリ)
+BookShelf (本棚アプリ)
