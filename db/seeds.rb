@@ -1,7 +1,7 @@
 20.times do |i|
   i += 1
   user = User.create(
-    name: "Sample#{i}",
+    name: "Sample_user#{i}",
     email: "sample#{i}@example.co.jp",
     password: "password",
     password_confirmation: "password",
@@ -19,9 +19,3 @@
     Like.create(book_id: i, user_id: j)
   end
 end
-
-
-
-
-
-

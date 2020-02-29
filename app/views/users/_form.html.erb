@@ -14,12 +14,14 @@
     </div>
   </div>
 
-  <div class="objective">
-    <%= f.label :objective, '目標設定' %>
-    <div class="objective-form">
-      <%= f.text_field :objective %>
+  <% if request.path_info = edit_user_path %>
+    <div class="objective">
+      <%= f.label :objective, '目標設定' %>
+      <div class="objective-form">
+        <%= f.text_field :objective %>
+      </div>
     </div>
-  </div>
+  <% end %>
  
   <div class="form-button">
     <%= f.submit yield(:button_text) %>
