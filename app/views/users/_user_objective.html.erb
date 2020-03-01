@@ -1,6 +1,6 @@
 <div class="user-objective">
   <% if current_user?(user)%>
-    <% if user.objective == '' %>
+    <% if user.objective.nil? %>
       <p>目標を設定しよう！</p>
     <% else %>
       <%= render partial: 'continues/continue_form', locals: { user: user } %>

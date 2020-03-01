@@ -1170,17 +1170,47 @@ footer {
 
   /* ユーザーページ */ 
   .user-page {
+    display: block;
     .user-info {
-      display: none;
+      width: auto;
+      display: flex;
+      .user-picture {
+        width: auto;
+        padding-top: 25px;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      .user-items {
+        margin: 10px 0 10px;
+        p {
+          a {
+            font-size: 20px;
+          }
+        }
+        .relation-button {
+          margin: 5px;
+        }
+        .follow-toggle-button {
+          margin: 15px auto;
+        }
+      }
     }
     .user-book-field {
       margin: 20px;
-      width: 100%;
+      width: auto;
+      display: flex;
+      justify-content: center;
       .book-info {
         margin: 9px;
-        width: 45%;
-        display: flex;
-        justify-content: center;
+        width: 43%;
+        .book-image {
+          img {
+            width: 125px;
+            height: 170px;
+          }
+        }
       }
     }
   }
