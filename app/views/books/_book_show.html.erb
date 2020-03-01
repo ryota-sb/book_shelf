@@ -1,4 +1,7 @@
 <div class="user-book-field">
+  <% if @books.empty? %>
+    <p><i class="fas fa-book"></i>BOOK 登録をしよう！</p>
+  <% end %>
   <% @books.each do |book| %>
     <div class="book-info">
       <div class="title-bar">

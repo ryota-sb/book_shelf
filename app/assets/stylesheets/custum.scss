@@ -586,6 +586,10 @@ header {
     flex-wrap: wrap;
     background-color: white;
     box-shadow: 0.5px 0.5px 3px 0.5px gray;
+    p {
+      margin: 200px auto;
+      font-size: 24px;
+    }
     .book-info {
       margin: 15px 0 0 15px;
       width: 15%;
@@ -1123,10 +1127,20 @@ footer {
     .title-logo {
       display: none;
     }
+    nav {
+      margin: 0;
+      ul {
+        float: none;
+        li {
+          padding-left: 10px;
+        }
+      }
+    }
   }
 
   /* トップページ */
   .top-page {
+    margin-top: 100px;
     .app-title {
       h1 {
         .br-sp {
@@ -1142,7 +1156,7 @@ footer {
   /* 新規登録ページ */
   .signup-page,
   .login-page,
-  .edit-book-page,
+  .user-edit-page,
   .password-reset-page {
     h1 {
       width: 100%;
@@ -1156,8 +1170,6 @@ footer {
     form {
       .input-form,
       .user-image,
-      .book-image,
-      .text-form,
       .objective,
       .check-box,
       .reset-page,
@@ -1167,7 +1179,20 @@ footer {
       }
     }
   }
-
+  .new-book-page,
+  .edit-book-page {
+    h1 {
+      width: 100%;
+    }
+    form {
+      .input-form,
+      .book-image,
+      .text-form,
+      .form-button {
+        width: 90%;
+      }
+    }
+  }
   /* ユーザーページ */ 
   .user-page {
     display: block;
@@ -1178,6 +1203,7 @@ footer {
         width: auto;
         padding-top: 25px;
         img {
+          line-height: 197px;
           width: 90px;
           height: 90px;
         }
@@ -1195,16 +1221,31 @@ footer {
         .follow-toggle-button {
           margin: 15px auto;
         }
+        .user-book-button {
+          margin: 20px auto 10px;
+          width: 90%;
+          a {
+            padding: 5px;
+          }
+        }
+        .user-favorite-button {
+          display: none;
+        }
       }
     }
     .user-book-field {
+      padding: 0;
       margin: 20px;
       width: auto;
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
+      p {
+        margin: 20px auto;
+        font-size: 16px;
+      }
       .book-info {
-        margin: 9px;
-        width: 43%;
+        margin: 10px;
+        width: 44%;
         .book-image {
           img {
             width: 125px;
@@ -1233,6 +1274,7 @@ footer {
   /*  いいねした本のページ */
   .like-book-show-page,
   .like-user-show-page {
+    .like-book-show-title,
     .like-user-show-title {
       h1 {
         font-size: 24px;
@@ -1245,10 +1287,16 @@ footer {
       .like-user-show-info {
         margin: 8px;
         width: 45%;
+        .like-user-image {
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
         .like-book-image {
           img {
-            width: 135px;
-            height: 180px;
+            width: 125px;
+            height: 170px;
           }
         }
       }
