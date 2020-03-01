@@ -1,5 +1,5 @@
-<p>Hi! <%= @user.name %></p>
+<p><%= @user.name %>さん！</p>
 
-<p>Welcome to the Sample App! Click on the link below to activate your account:</p>
+<p>新規登録内容の入力ありがとうございます！下のリンクを押して本登録をして下さい！</p>
 
-<%= link_to 'Activation', edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= link_to '登録を完了させる', edit_account_activation_url(@user.activation_token, email: @user.email) %>
