@@ -1,6 +1,7 @@
-<%= @user.name %>さん！
+BookShelfへようこそ！
 
-ご登録ありがとうございます！下のリンクから本登録をしてください！
+こんにちは、<%= @user.name %>さん！
 
-<%= '登録を完了させる', edit_account_activation_url(@user.activation_token, email: @user.email) %>
+下記リンクから登録の完了をお願いします。
 
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
