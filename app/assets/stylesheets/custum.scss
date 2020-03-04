@@ -30,7 +30,7 @@ body {
     transition: all 0.5s ease;
     z-index: 2;
     .main {
-      padding-bottom: 40px;
+      padding-bottom: 30px;
     }
   }
 }
@@ -447,10 +447,23 @@ header {
     width: 50%;
     display: flex;
     flex-flow: column;
-    .users-image {
-      img {
-        border: 1px solid black;
-        border-radius: 50%;
+    .user {
+      border-bottom: 1px solid black;
+      .user-info {
+        margin: 10px 0;
+        text-align: center;
+        .user-image {
+          img {
+            border: 1px solid black;
+            border-radius: 50%;
+          }
+        }
+        .user-name {
+          a {
+            font-size: 24px;
+            color: black;
+          }
+        }
       }
     }
   }
@@ -939,7 +952,7 @@ header {
   }
 }
 
-/* いいねしたユーザーの一覧、お気に入りに入れた本 */
+/* いいねしたユーザーの一覧、お気に入りに入れた本、本の検索 */
 .like-user-show-page,
 .like-book-show-page,
 .book-search-page {
@@ -961,6 +974,10 @@ header {
     display: flex;
     flex-wrap: wrap;
     box-shadow: 0.5px 0.5px 3px 0.5px gray;
+    .favorite-book-empty,
+    .favorite-user-empty {
+      margin: 15px auto 0;
+    }
     .like-user-show-info,
     .like-book-show-info,
     .search-book-info {
@@ -1090,7 +1107,6 @@ footer {
   height: 30px;
   text-align: center;
   background-color: gray;
-  box-shadow: 0.5px 0 3px 0.5px gray;
   z-index: 2;
   p {
     line-height: 30px;
@@ -1193,6 +1209,41 @@ footer {
       }
     }
   }
+
+  /* ユーザー 一覧ページ */
+  .all-user-page {
+    .all-user-page-title {
+      h1 {
+        font-size: 28px;
+      }
+    }
+    .users {
+      margin: 0;
+      width: auto;
+      .user {
+        border-bottom: 1px solid gray;
+        .user-info {
+          margin: 10px 50px;
+          display: flex;
+          align-items: center;
+          .user-image {
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .user-name {
+            margin: 0 20px;
+            a {
+              font-size: 24px;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
   /* ユーザーページ */ 
   .user-page {
     display: block;
@@ -1204,8 +1255,8 @@ footer {
         padding-top: 25px;
         img {
           line-height: 197px;
-          width: 90px;
-          height: 90px;
+          width: 80px;
+          height: 80px;
         }
       }
       .user-items {
@@ -1262,18 +1313,106 @@ footer {
     .page-left {
       margin: 20px;
       width: 90%;
+      text-align: center;
+      .book-user-info {
+        width: 50%;
+        margin: 5px auto 0;
+        .book-user-image {
+          width: auto;
+          margin: 0 10px 0 15px;
+        }
+        .book-user-name {
+          width: auto;
+        }
+      }
       .book-image {
         img {
-          width: 135px;
-          height: 180px;
+          width: 125px;
+          height: 170px;
+        }
+      }
+      .book-edit-button {
+        width: 40%;
+      }
+    }
+    .page-right {
+      margin: 20px;
+      width: auto;
+      height: 500px;
+      .text-field {
+        margin: 0;
+        padding: 20px;
+      }
+    }
+  }
+  /* コメントフィールド */
+  .comment-page {
+    margin: 20px;
+    #toggle-target {
+      .comment-form {
+        form {
+          textarea {
+            width: 300px;
+          }
+          .comment-button {
+            width: auto;
+            input {
+              margin: 0 20px;
+            }
+          }
+        }
+      }
+    }
+    #comment-area {
+      .comment-info {
+        .user-comment {
+          width: auto;
+        }
+        .comment-delete {
+          width: auto;
         }
       }
     }
   }
 
-  /*  いいねした本のページ */
+  /* フォロー、フォロワーページ */
+  .follow-page {
+    .follow-page-title {
+      h1 {
+        width: auto;
+      }
+    }
+    .follow-user-box {
+      .follow-user-info {
+        margin: 0;
+        width: auto;
+        .follow-user {
+          margin: 10px 50px;
+          height: auto;
+          display: flex;
+          flex-direction: row-reverse;
+          .follow-user-name {
+            margin: 20px;
+          }
+          .follow-user-image {
+            height: auto;
+            img {
+              width: 80px;
+              height: 80px;
+            }
+          }
+        }
+        .my-book {
+          display: none;
+        }
+      }
+    }
+  }
+
+  /* いいねしたユーザーの一覧、お気に入りに入れた本、本の検索 */
   .like-book-show-page,
-  .like-user-show-page {
+  .like-user-show-page,
+  .book-search-page {
     .like-book-show-title,
     .like-user-show-title {
       h1 {
@@ -1281,10 +1420,16 @@ footer {
       }
     }
     .like-book-container,
-    .like-user-container {
+    .like-user-container,
+    .book-search-container {
       padding: 10px;
+      .favorite-book-empty,
+      .favorite-user-empty {
+        margin: 0 auto;
+      }
       .like-book-show-info,
-      .like-user-show-info {
+      .like-user-show-info,
+      .search-book-info {
         margin: 8px;
         width: 45%;
         .like-user-image {
@@ -1293,7 +1438,8 @@ footer {
             height: 100px;
           }
         }
-        .like-book-image {
+        .like-book-image,
+        #search-book {
           img {
             width: 125px;
             height: 170px;

@@ -84,6 +84,8 @@ GEM
     concurrent-ruby (1.1.6)
     crass (1.0.6)
     erubi (1.9.0)
+    faker (2.10.2)
+      i18n (>= 1.6, < 2)
     ffi (1.12.2-x64-mingw32)
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
@@ -221,6 +223,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   carrierwave
+  faker
   font-awesome-rails
   foreman
   jbuilder (~> 2.7)

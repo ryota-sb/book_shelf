@@ -1,21 +1,52 @@
-20.times do |i|
-  i += 1
-  user = User.create(
-    name: "Sample_user#{i}",
-    email: "sample#{i}@example.co.jp",
-    password: "password",
-    password_confirmation: "password",
-    activated: true
-  )
+# ユーザー
+User.create!(
+  name:                   'Ryota',
+  email:                  'rails_sample@example.com',
+  password:               'password',
+  password_confirmation:  'password',
+  activated:               true,
+  activated_at:            Time.zone.now,
+)
 
-  10.times do |j|
-    j += 1
-    book = Book.create(
-      title: "#{user.name}#{j}",
-      content: "#{j}番目の投稿",
-      user_id: user.id
+99.times do |n|
+  name = Faker::Name.name
+  email = Faker::Internet.email
+  password = 'password'
+  User.create!(
+    name:                   name,
+    email:                  email,
+    password:               password,
+    password_confirmation:  password,
+    activated:              true,
+    activated_at:           Time.zone.now,
+  )
+end
+
+# 本
+users = User.all
+10.times do |n|
+  n += 1
+  title = "#{n}個目の本"
+  content = "#{n}個目の本の内容"
+  users.each do |user|
+    user.books.create!(
+      title: title,
+      content: content,
     )
-    
-    Like.create(book_id: i, user_id: j)
   end
 end
+
+# フォローとフォロワー
+users = User.all
+user = users.first
+following = users[3..50]
+followers = users[4..45]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
+
+# いいね
+# users = User.all
+# user = users.first
+# books = Book.all
+
+# コメント

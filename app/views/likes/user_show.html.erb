@@ -6,7 +6,11 @@
       <h1>いいねしてくれたユーザー</h1>
     <% end %>
   </div>
-   <div class="like-user-container">
+  <div class="like-user-container">
+    <% if @likes.empty? %>
+      <div class="favorite-user-empty">
+      <p>いいねは、されていません</p>
+    <% end %>
     <% @likes.each do |like| %>
       <div class="like-user-show-info">
         <div class="like-user-name">

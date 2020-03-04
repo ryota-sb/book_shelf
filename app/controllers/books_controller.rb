@@ -31,7 +31,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update_attributes(book_params)
-      redirect_to user_url(current_user)
+      redirect_to book_url(current_user)
     else
       render 'edit'
     end
