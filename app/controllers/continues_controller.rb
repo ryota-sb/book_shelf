@@ -7,8 +7,7 @@ class ContinuesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @continue = @user.continues.user_id
-    @continue.destroy
+    @continue = Continue.where(user_id: params[:user_id]).destroy_all
+    redirect_to user_url(current_user)
   end
 end

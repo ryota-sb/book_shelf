@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :continues, only: [:create, :destroy]
+  resources :continues, param: :user_id, only: [:create, :destroy]
   
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
