@@ -536,9 +536,9 @@ header {
             background-color: $light-gray;
             border: 1px solid $light-blue;
             border-radius: 5px;
-            border-style: none;
             outline: none;
             color: $light-blue;
+            -webkit-appearance: none;
             &:hover {
               cursor: pointer;
               box-shadow: 0.5px 0.5px 3px 0.5px $blue;
