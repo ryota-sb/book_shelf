@@ -538,7 +538,6 @@ header {
             border-radius: 5px;
             outline: none;
             color: $light-blue;
-            -webkit-appearance: none;
             &:hover {
               cursor: pointer;
               box-shadow: 0.5px 0.5px 3px 0.5px $blue;
@@ -1116,6 +1115,11 @@ footer {
 }
 
 @media screen and (max-width: 420px) {
+
+  input {
+    -webkit-appearance: none;
+  }
+
   /* オーバレイ */
   .side-open {
     .wrapper,
