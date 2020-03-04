@@ -1,6 +1,6 @@
 # ユーザー
 User.create!(
-  name:                   'Ryota',
+  name:                   'Test User',
   email:                  'rails_sample@example.com',
   password:               'password',
   password_confirmation:  'password',

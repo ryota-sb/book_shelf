@@ -281,11 +281,9 @@ header {
   }
   .signup-button {
     width: 150px;
-    height: 100%;
-    
     border: 1px solid green;
     border-radius: 5px;
-    margin: 50px auto;
+    margin: 50px auto 30px;
     a {
       display: block;
       padding: 10px 0;
@@ -299,6 +297,33 @@ header {
     }
     &:hover {
       border: 1px solid greenyellow;
+    }
+  }
+  .test-user-login {
+    width: 150px;
+    margin: 0 auto;
+    form {
+      width: auto;
+      .test-user-login-button {
+        input {
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+          letter-spacing: 0.2em;
+          font-size: 16px;
+          border: 1px solid blue;
+          border-radius: 5px;
+          background-color: white;
+          color: blue;
+          outline: none;
+          box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+          &:hover {
+            border: 1px solid skyblue;
+            color: skyblue;
+          }
+        }
+      }
     }
   }
 }

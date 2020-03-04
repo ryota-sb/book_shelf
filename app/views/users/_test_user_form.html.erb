@@ -1,0 +1,7 @@
+<%= form_for(:session, url: login_path) do |f| %>
+  <%= f.hidden_field :email, value: 'rails_sample@example.com' %>
+  <%= f.hidden_field :password, value: 'password' %>
+  <div class="test-user-login-button">
+    <%= f.submit 'テストログイン' %>
+  </div>
+<% end %> 
