@@ -1,6 +1,8 @@
 <div id="continue-form">
   <% if current_user?(user) %>
     <%= render partial: 'continues/continue', locals: { user: user } %>
-    <%= link_to '削除', continue_path(user.id), method: :delete %>
+    <% if  @continue && Time.zone.now.to_i - @continue.created_at.to_i > 10.second %>
+      <%= link_to '削除', continue_path(user.id), method: :delete %>
+    <% end %>
   <% end %>
 </div>

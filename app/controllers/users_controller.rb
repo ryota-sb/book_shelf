@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @books = @user.books
+    @continue = @user.continues.last
   end
 
   def new
