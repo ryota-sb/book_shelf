@@ -492,6 +492,26 @@ header {
         }
       }
     }
+    .paginate {
+      margin: 20px auto;
+      .pagination {
+        li {
+          a {
+            border: none;
+            color: #696969;
+          }
+          &:hover {
+            border-radius: 15px;
+          }
+        }
+        .active {
+          a {
+            background-color: skyblue;
+            border-radius: 15px;
+          }
+        }
+      }
+    }
   }
 }
 
