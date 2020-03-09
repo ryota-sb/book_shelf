@@ -16,7 +16,7 @@
   <li>Ruby on Rails</li>
 </ul>
 
-<p>環境</p>
+<p>- 環境 -</p>
 <ul>
   <li>AWS(EC2)</li>
 </ul>
