@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def index
-    @users = User.page(params[:page]).per(10)
+    @users = User.page(params[:page])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show

@@ -468,7 +468,7 @@ header {
     margin-top: 40px;
     text-align: center;
   }
-  .users {
+  #users {
     margin: 0 auto;
     width: 50%;
     display: flex;
@@ -495,8 +495,10 @@ header {
     .paginate {
       margin: 20px auto;
       .pagination {
+        display: flex;
         li {
           a {
+            padding: 5px;
             border: none;
             color: #696969;
           }
@@ -506,7 +508,8 @@ header {
         }
         .active {
           a {
-            background-color: skyblue;
+            background-color: $light-blue;
+            color: white;
             border-radius: 15px;
           }
         }
@@ -1268,7 +1271,7 @@ footer {
         font-size: 28px;
       }
     }
-    .users {
+    #users {
       margin: 0;
       width: auto;
       .user {
