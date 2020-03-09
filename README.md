@@ -21,4 +21,4 @@
   <li>AWS(EC2)</li>
 </ul>
 
-<p><a href="http://ec2-18-179-218-147.ap-northeast-1.compute.amazonaws.com:3000">アプリページへ</a></p>
+<p><a href="http://ec2-18-179-218-147.ap-northeast-1.compute.amazonaws.com:3000">BookShelfへ</a></p>
